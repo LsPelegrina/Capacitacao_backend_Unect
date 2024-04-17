@@ -36,3 +36,7 @@ de query pelo RA ou nome.<br>
 
 A documentação da API foi feita utilizando o swagger-ui, para acessar a documentação entre no path /api-docs/, onde estão todas as rotas.
 
+## Teste de rotas
+
+Para o teste das rotas foi utilizado uma extensão do visual studio code, onde você cria um arquivo .http, e consegue fazer requisições para API, o arquivo está no repositorio explicado, e de fácil acesso, e uso.
+
