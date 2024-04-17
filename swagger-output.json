@@ -1,0 +1,179 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Desenvolvimento CRUD Alunos",
+    "description": "O projeto consiste no desenvolvimento de um backend no formato CRUD para alunos utilizando node.js, Express e mongoDB.",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/student": {
+      "post": {
+        "summary": "Cadastrar um Aluno",
+        "description": "Cadastrar um Aluno",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "Lucas",
+                  "type": "string"
+                },
+                "age": {
+                  "example": 20,
+                  "type": "number"
+                },
+                "ra": {
+                  "example": "31231231",
+                  "type": "string"
+                },
+                "cpf": {
+                  "example": "41241231231",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "get": {
+        "summary": "Listar todos os alunos cadastrados, ou filtrando eles",
+        "description": "Listar todos os alunos cadastrados, ou filtrando eles",
+        "parameters": [
+          {
+            "name": "ra",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/student/{id}": {
+      "get": {
+        "summary": "Listar aluno pelo seu id",
+        "description": "Listar aluno pelo seu id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Atualizar campo do cadastro de determinado aluno pelo seu id",
+        "description": "Atualizar campo do cadastro de determinado aluno pelo seu id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "Luisa",
+                  "type": "string"
+                },
+                "age": {
+                  "example": 20,
+                  "type": "number"
+                },
+                "ra": {
+                  "example": "12312312",
+                  "type": "string"
+                },
+                "cpf": {
+                  "example": "123123123123",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Deletar o cadastro de algum aluno pelo seu id",
+        "description": "Deletar o cadastro de algum aluno pelo seu id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}

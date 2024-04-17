@@ -1,0 +1,38 @@
+### Primeira pagina da API
+GET http://localhost:3000/
+Content-Type: application/json
+
+### Cadastrar um Aluno
+POST http://localhost:3000/student
+Content-Type: application/json
+
+{
+  "name": "Lucas",
+  "age": 20,
+  "ra": "328138123",
+  "cpf": "141271241341"
+}
+
+### Listar todos os alunos cadastrados - Pode ser utilizado filtro
+### por nome, ra, ou os dois. (?name - ?ra)
+GET http://localhost:3000/student?
+Content-Type: application/json
+
+### Listar aluno pelo seu id
+GET http://localhost:3000/student/661f52eef1540815ebeacb6d
+Content-Type: application/json
+
+### Atualizar campo do cadastro de determinado aluno pelo seu id
+PATCH http://localhost:3000/student/661f52eef1540815ebeacb6d
+Content-Type: application/json
+
+{
+  "name": "Luisa meu amor111111111111111",
+  "age": 20,
+  "ra": "231321312",
+  "cpf": "5412312312"
+}
+
+### Deletar o cadastro de algum aluno pelo seu id
+DELETE  http://localhost:3000/student/661f52eef1540815ebeacb6d
+Content-Type: application/json
